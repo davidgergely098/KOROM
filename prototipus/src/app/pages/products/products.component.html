@@ -1,0 +1,50 @@
+<div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>
+                <h2><b>Termékek</b></h2>
+            </legend><br>
+
+            <div *ngFor="let product of products">
+                <div class="container row">
+                    <div class="col-md-6">
+                        <h4> {{product.name}}</h4>
+                        <img *ngIf="product.base64Img" src="{{product.base64Img}}" class="img-thumbnail" id="image"
+                            alt="Rendelt termék képe" style="width: 50%; height: 50%;">
+                        <img *ngIf="!product.base64Img" src="../../../assets/logo.jpg" class="img-thumbnail"
+                            alt="Rendelt termék képe" style="width: 50%; height: 50%;">
+                        <label style="vertical-align: bottom; float: right;">
+                            <h3>{{product.price}} Ft</h3>
+                            <h5 *ngIf="product.stock > 0" style="color: green;">Készleten {{product.stock}} db</h5>
+                            <h5 *ngIf="product.stock < 1" style="color: red;">Készleten {{product.stock}} db</h5>
+                        </label>
+                    </div>
+                    <label class="col-md-6 control-label"></label>
+                    <div *ngIf="product.stock > 0" class="col-md-4"><br><a (click)="addToCart(product)" class="btn btn-success"
+                            role="button">Kosárba rakom
+                            <span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </div>
+                    <div *ngIf="this.navbarService.userIsAdmin && this.navbarService.userLoggedIn | async" class="col-md-4"><br><a (click)="updateProduct(product)" class="btn btn-succes"
+                            role="button">Szerkesztés
+                      <span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </div>
+                    <div *ngIf="this.navbarService.userIsAdmin && this.navbarService.userLoggedIn | async" class="col-md-4"><br><a (click)="removeProduct(product)" class="btn btn-succes"
+                            role="button">Termék eltávolítása
+                      <span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </div>
+
+                </div>
+                <br>
+                <hr style="border: 1px solid grey;">
+            </div>
+
+        </fieldset>
+    </form>
+</div><!-- /.container -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

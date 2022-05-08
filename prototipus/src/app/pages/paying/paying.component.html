@@ -1,0 +1,43 @@
+<div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <form [formGroup]="payingInfo" class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>
+                <h2><b>Fizetési adatok</b></h2>
+            </legend><br>
+            <div style="text-align: center;">
+
+                <!-- Default radio -->
+                <div class="form-check">
+                    <input formControlName="Paying" class="form-check-input" type="radio" value="Bankkártyás fizetés" />
+                    <label class="form-check-label" for="flexRadioDefault1"> Bankkártya utánvéttel </label>
+                </div>
+
+                <!-- Default checked radio -->
+                <div class="form-check">
+                    <input formControlName="Paying" class="form-check-input" type="radio" value="Készpénzes fizetés"
+                        checked />
+                    <label class="form-check-label" for="flexRadioDefault2"> Készpénz utánvéttel </label>
+                </div>
+
+                <!--Alert message -->
+                <div *ngIf="showAlertMessage" class="alert alert-danger" style="text-align: center;" role="alert">
+                    Kötelező választani!<i class="glyphicon glyphicon-remove"></i></div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br>
+                        <a (click)="order()" class="btn btn-success" role="button">Megrendelés
+                            <span class="glyphicon glyphicon-ok"></span></a>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -1,0 +1,92 @@
+<div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <form [formGroup]="deliveryInfo" class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>
+                <h2><b>Szállítási adatok</b></h2>
+            </legend><br>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Irányítószám</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                        <input formControlName="ZipCode" placeholder="1234" class="form-control" type="number" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Város</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-screenshot"></i></span>
+                        <input formControlName="City" name="user_name" placeholder="Szeged" class="form-control"
+                            type="text" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Közterület neve</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+                        <input formControlName="Street" placeholder="Kárász" class="form-control" type="text" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Házszám</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input formControlName="Number" placeholder="12" class="form-control" type="number" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Emelet, ajtó</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input formControlName="FloorDoor" placeholder="Fszt. 2" class="form-control" type="text"
+                            required>
+                    </div>
+                </div>
+            </div>
+
+            <!--Alert message -->
+            <div *ngIf="showAlertMessage" class="alert alert-danger" style="text-align: center;" role="alert">Minden mező
+                kötelező! <i class="glyphicon glyphicon-remove"></i></div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div style="text-align: center;" class="col-md-4"><br>
+                    <a class="btn btn-success" (click)="onSubmit()" role="button">Mentés <span
+                            class="glyphicon glyphicon-ok"></span></a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "nail-da314"
+  },
+  "targets": {
+    "nail-da314": {
+      "hosting": {
+        "webshop": [
+          "nail-da314"
+        ]
+      }
+    }
+  }
+}

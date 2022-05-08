@@ -1,0 +1,90 @@
+<div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <form [formGroup]="productInfo" class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>
+                <h2 style="text-align: center;"><b>Termék adatok</b></h2>
+            </legend><br>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Termék neve</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+                        <input formControlName="Name" placeholder="Termék neve" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Termék ára</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-euro"></i></span>
+                        <input formControlName="Price" placeholder="3500" class="form-control" type="number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Kategória</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <select formControlName="Category">
+                            <option selected>Válassz...</option>
+                            <option value="woman">Körömlakk</option>
+                            <option value="man">Építőanyag</option>
+                            <option value="child">Kiegészítők</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Készlet információ</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+                        <input formControlName="Stock" placeholder="15" class="form-control" type="number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- File input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Képfeltöltés</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                        <input #imageInput class="form-control" type="file" accept="image/*"
+                            (change)="setFormcontrolImageBase64Value(imageInput)">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Button -->
+            <div class="form-group" style="text-align: center;">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4"><br>
+                    <button (click)="onSubmit()" class="btn btn-warning">Mentés <span
+                            class="glyphicon glyphicon-ok"></span></button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

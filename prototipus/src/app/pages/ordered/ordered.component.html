@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>A Team Webshop</title>
+    <link rel="icon" href="../../../asset/logo.png" />
+    <link rel="stylesheet" href="ordered.component.scss" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $.get("navbar_logged_in.html", function (data) {
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script>
+
+    <div class="container">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>
+                    <h2><b>Sikeres rendelés</b></h2>
+                </legend><br>
+                <div class="glyphicon glyphicon-ok col-md-12" style="color: green; text-align: center; font-size: 150px;"></div>
+                <br>
+                <h4 style="text-align: center;">Köszönjük!</h4>
+                <h4 style="text-align: center;">Rendelésed hamarosan feldolgozásra kerül.</h4>
+                <div class="form-group" style="text-align: center;">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br>
+                        <a href="delivery" 
+                            class="btn btn-info" role="button">Kiszállítás nyomonkövetése
+                            <span class="glyphicon"></span></a>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div><!-- /.container -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>

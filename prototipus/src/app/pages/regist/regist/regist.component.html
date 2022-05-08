@@ -1,0 +1,98 @@
+<div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <form [formGroup]="newUserInfo" class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>
+                <h2 style="text-align: center;"><b>Regisztráció</b></h2>
+            </legend><br>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Felhasználónév</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input formControlName="Name" placeholder="Felhasználónév" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Jelszó</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input formControlName="Password" placeholder="Jelszó" class="form-control" type="password">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Jelszó újra</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input formControlName="Password2" placeholder="Jelszó újra" class="form-control"
+                            type="password">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">E-mail cím</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input formControlName="Email" placeholder="E-mail cím" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Telefonszám</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input formControlName="Phone" placeholder="(+36...)" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+
+            <!-- Success message -->
+            <div *ngIf="showSuccessMessage" class="alert alert-success" style="text-align: center;" role="alert" id="success_message">
+                <i class="glyphicon glyphicon-thumbs-up"></i> Sikeres regisztráció
+            </div>
+
+
+            <!--Password Alert message message -->
+            <div *ngIf="showAlertMessage" class="alert alert-danger" style="text-align: center;" role="alert">Nem
+                egyezik a két jelszó! <i class="glyphicon glyphicon-remove"></i></div>
+
+            <!-- Button -->
+            <div class="form-group" style="text-align: center;">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4"><br>
+                    <button (click)="onSubmit()" class="btn btn-warning">Regisztráció <span
+                            class="glyphicon glyphicon-ok"></span></button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
